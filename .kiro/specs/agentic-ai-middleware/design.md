@@ -13,28 +13,10 @@ The system emphasizes interpretability through SHAP (SHapley Additive exPlanatio
 
 ### High-Level Architecture
 
-```mermaid
-graph LR
-    subgraph "Tree Build Module"
-        CD[Clinical Dataset] --> DP[Data Preprocessing]
-        CDC[Clinical Decision Criteria] --> DF[Data Frame]
-        DP --> DF
-        DF --> WC[Weight Calculation]
-        WC --> DT[Decision Tree]
-    end
-    
-    subgraph "Prediction Module"
-        PD[Patient Data] --> PE[Prediction Engine]
-        DT --> PE
-        PE --> REC[Recurrence: Yes/No]
-        PE --> INT[Interpretation]
-        INT --> SHAP[SHAP]
-        SHAP --> INT
-        INT --> FO[Final Output]
-        REC --> FO
-        FO --> FC[Feature Contributions]
-    end
-```
+<p align="center">
+  <img src="Architecture_DNA_CODERS.png" width="800"/>
+</p>
+
 
 ### Component Architecture
 
